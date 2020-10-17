@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module" src="https://unpkg.com/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/@ionic/core@latest/dist/ionic/ionic.js"></script>
+    <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <title>Obligatorio Taller de Tecnologías</title>
+</head>
+<body>
+    <ion-app>    
+        <ion-tabs>
+            <ion-tab tab="Inicio">
+                <ion-header>
+                        <ion-toolbar>                                                        
+                                <ion-title><img src="logo.png" id="logo">DiskoTek</ion-title>                               
+                                </ion-button>                                                                                                               
+                        </ion-toolbar>                                                  
+                </ion-header>
+                <ion-content padding>             
+                    <div class="listaTopCancion">
+                        <h4>Las más escuchadas <ion-icon name="musical-notes" slot="icon-only" size="small"></ion-icon></h4>                                      
+                        <ion-list id="listaTopCanciones">
+
+                        </ion-list>
+                    </div> 
+                    <div class="cancionesFavoritas">
+                            <h4>Canciones Favoritas <ion-icon name="star" slot="icon-only" size="small"></ion-icon></h4>
+                            <ion-list id="listaCancionesFavoritas"></ion-list>
+                   </div>
+                   <div class="artistasFavoritos">
+                        <h4>Artistas Favoritos <ion-icon name="star" slot="icon-only" size="small"></ion-icon></h4>
+                        <ion-list id="listaArtistasFavoritos"></ion-list>
+                    </div>
+                    <div class="albumesFavoritos">
+                            <h4>Álbumes Favoritos <ion-icon name="star" slot="icon-only" size="small"></ion-icon></h4>
+                            <ion-list id="listaAlbumesFavoritos"></ion-list>
+                    </div>                    
+                    <div class="detalleTopCancion">
+                            <ion-card>
+                                <ion-card-header>
+                                    <ion-button id="cerrarTopCancion" fill="clear">
+                                        <ion-icon name="close" slot="icon-only"></ion-icon>
+                                    </ion-button>
+                                    <img src=""> 
+                                    <ion-card-title></ion-card-title>
+                                    <ion-card-subtitle></ion-card-subtitle>                                                                                                                               
+                                </ion-card-header>
+                                <ion-card-content>  
+                                                                           
+                                </ion-card-content>  
+                                <ion-button id="botonAgregarTopCancion">
+                                        <ion-label>Agregar a Favoritos </ion-label>
+                                        <ion-icon name="star"></ion-icon>                                                             
+                                    </ion-button>                                       
+                            </ion-card>
+                        </div>                                          
+                </ion-content>                
+            </ion-tab>
+
+            <ion-tab tab="Canciones">
+                    <ion-header>
+                            <ion-toolbar>                                                        
+                                    <ion-title><img src="logo.png" id="logo">DiskoTek</ion-title>                                    
+                                    </ion-button>                                                                                                               
+                            </ion-toolbar>      
+                               
+                    </ion-header>
+                    <ion-content padding>             
+                        <div class="listaCancion">
+                            <h4>Búsqueda por Canción <ion-icon name="musical-notes" slot="icon-only" size="small"></ion-icon></h4>                            
+                            <ion-input type="text" id="textoCanciones" placeholder="Ingrese el nombre de una Canción"></ion-input><br>                           
+                            <ion-button id="botonCanciones">Buscar</ion-button>
+                            <ion-button id="botonLimpiarCanciones">Limpiar</ion-button>
+                            <br>
+                            <ion-list id="listaCanciones">
+
+                            </ion-list>                            
+                        </div>
+                        <div class="detalleCancion">
+                            <ion-card>
+                                <ion-card-header>
+                                    <ion-button id="cerrarCancion" fill="clear">
+                                        <ion-icon name="close" slot="icon-only"></ion-icon>
+                                    </ion-button>
+                                    <img src=""> 
+                                    <ion-card-title></ion-card-title>
+                                    <ion-card-subtitle></ion-card-subtitle>                                                                                                     
+                                </ion-card-header>
+                                <ion-card-content> 
+                                    
+                                </ion-card-content>
+                                <ion-button id="botonAgregarCancion">
+                                        <ion-label>Agregar a Favoritos </ion-label>
+                                        <ion-icon name="star"></ion-icon>                                                             
+                                </ion-button>   
+                            </ion-card>
+                        </div>                      
+                    </ion-content>                    
+                </ion-tab>
+
+                <ion-tab tab="Artistas">
+                        <ion-header>
+                                <ion-toolbar>                                                        
+                                        <ion-title><img src="logo.png" id="logo">DiskoTek</ion-title>                                         
+                                        </ion-button>                                                                                                               
+                                </ion-toolbar>       
+                                   
+                        </ion-header>
+                        <ion-content padding>             
+                            <div class="listaArtista">
+                                <h4>Búsqueda por Artista <ion-icon name="contact" slot="icon-only" size="small"></ion-icon></h4>                                
+                                <ion-input type="text" id="textoArtistas" placeholder="Ingrese el nombre de un Artista"></ion-input><br>
+                                <ion-button id="botonArtistas">Buscar</ion-button>
+                                <ion-button id="botonLimpiarArtistas">Limpiar</ion-button>
+                                <br>
+                                <ion-list id="listaArtistas">
+
+                                </ion-list>
+                            </div>
+                            <div class="detalleArtista">
+                                <ion-card>
+                                    <ion-card-header>
+                                        <ion-button id="cerrarArtista" fill="clear">
+                                            <ion-icon name="close" slot="icon-only"></ion-icon>
+                                        </ion-button>
+                                        <img src=""> 
+                                        <ion-card-title></ion-card-title>                                                                                                    
+                                    </ion-card-header>
+                                    <ion-card-content> 
+                                          
+                                    </ion-card-content>
+                                    <ion-button id="botonTopCancionesArtista">Top Tracks</ion-button>                                     
+                                    <ion-button id="botonArtistasSimilares">Similares</ion-button>                                     
+                                    
+                                    <ion-button id="botonAgregarArtista">
+                                            <ion-label>Agregar a Favoritos </ion-label>
+                                            <ion-icon name="star"></ion-icon>                                                             
+                                        </ion-button>   
+                                </ion-card>
+                            </div> 
+                            <div class="listaTopTracksArtista">
+                                <ion-list id="listaTopTracksArtista">
+
+                                </ion-list>
+
+                            </div>                             
+                        </ion-content>
+                    </ion-tab>
+
+                    <ion-tab tab="Albumes">
+                            <ion-header>
+                                    <ion-toolbar>                                                        
+                                <ion-title><img src="logo.png" id="logo">DiskoTek</ion-title>                                 
+                                </ion-button>                                                                                                               
+                        </ion-toolbar>                                            
+                            </ion-header>
+                            <ion-content padding>             
+                                <div class="listaAlbum">
+                                    <h4>Búsqueda por Álbum <ion-icon name="disc" slot="icon-only" size="small"></ion-icon></h4>                                    
+                                    <ion-input type="text" id="textoAlbumes" placeholder="Ingrese el nombre de un Álbum"></ion-input><br>
+                                    <ion-button id="botonAlbumes">Buscar</ion-button>
+                                    <ion-button id="botonLimpiarAlbumes">Limpiar</ion-button>
+                                    <br>
+                                    <ion-list id="listaAlbumes">
+
+                                    </ion-list>
+                                </div>
+                                <div class="detalleAlbum">
+                                    <ion-card>
+                                        <ion-card-header>
+                                            <ion-button id="cerrarAlbum" fill="clear">
+                                                <ion-icon name="close" slot="icon-only"></ion-icon>
+                                            </ion-button>
+                                            <img src=""> 
+                                            <ion-card-title></ion-card-title>
+                                            <ion-card-subtitle></ion-card-subtitle>                                     
+                                        </ion-card-header>   
+                                        <ion-button id="botonAgregarAlbum">
+                                                <ion-label>Agregar a Favoritos </ion-label>
+                                                <ion-icon name="star"></ion-icon>                                                             
+                                            </ion-button>                                       
+                                    </ion-card>
+                                </div>                              
+                            </ion-content>
+                        </ion-tab>
+                        <ion-tab-bar slot="bottom">
+                            <ion-tab-button tab="Inicio">
+                                <ion-label>Inicio</ion-label>
+                                <ion-icon name="home"></ion-icon>
+                            </ion-tab-button>
+                            <ion-tab-button tab="Canciones">
+                                <ion-label>Canciones</ion-label>
+                                <ion-icon name="musical-notes"></ion-icon>
+                            </ion-tab-button>
+                            <ion-tab-button tab="Artistas">
+                                    <ion-label>Artistas</ion-label>
+                                    <ion-icon name="contact"></ion-icon>
+                                </ion-tab-button>
+                                <ion-tab-button tab="Albumes">
+                                        <ion-label>Álbumes</ion-label>
+                                        <ion-icon name="disc"></ion-icon>
+                                </ion-tab-button>
+                        </ion-tab-bar>          
+        </ion-tabs>
+     </ion-app>
+ 
+    </div>
+   
+     <script>
+         $(document).ready(function(){   
+
+            var cancionesFavoritas = [],
+            arrayCancionesLocalStorage = JSON.parse(localStorage.getItem('cancionesFavoritas')) || [];
+
+            var artistasFavoritos = [],
+            arrayArtistasLocalStorage = JSON.parse(localStorage.getItem('artistasFavoritos')) || [];
+
+            var albumesFavoritos = [],
+            arrayAlbumesLocalStorage = JSON.parse(localStorage.getItem('albumesFavoritos')) || [];
+             
+         getTopCanciones();
+         listarCancionesFavoritas();
+         listarArtistasFavoritos();
+         listarAlbumesFavoritos();
+        
+        
+         $("#botonCanciones").on("click", function() {getCanciones()});
+         $("#botonArtistas").on("click", function() {getArtistas()}); 
+         $("#botonAlbumes").on("click", function() {getAlbumes()}); 
+   
+         
+         $("#botonLimpiarCanciones").on("click", function() {LimpiarCanciones()});
+         $("#botonLimpiarArtistas").on("click", function() {LimpiarArtistas()});
+         $("#botonLimpiarAlbumes").on("click", function() {LimpiarAlbumes()});    
+           
+         
+
+         function AgregarCancion(cancion){
+            $("#botonAgregarCancion").on("click", function(event){
+                arrayCancionesLocalStorage.push(cancion);
+                localStorage.setItem('cancionesFavoritas', JSON.stringify(arrayCancionesLocalStorage)); 
+                listarCancionesFavoritas();             
+            });
+         };
+
+         function AgregarTopCancion(topCancion){
+            $("#botonAgregarTopCancion").on("click", function(event){
+                arrayCancionesLocalStorage.push(topCancion);
+                localStorage.setItem('cancionesFavoritas', JSON.stringify(arrayCancionesLocalStorage));              
+            });
+         };
+
+         function AgregarArtista(artista){
+            $("#botonAgregarArtista").on("click", function(event){
+                arrayArtistasLocalStorage.push(artista);
+                localStorage.setItem('artistasFavoritos', JSON.stringify(arrayArtistasLocalStorage)); 
+                listarArtistasFavoritos();             
+            });
+         };
+
+         function AgregarAlbum(album){
+            $("#botonAgregarAlbum").on("click", function(event){               
+                arrayAlbumesLocalStorage.push(album);
+                localStorage.setItem('albumesFavoritos', JSON.stringify(arrayAlbumesLocalStorage)); 
+                listarAlbumesFavoritos();                   
+            });
+         };
+              
+
+         function LimpiarCanciones()
+         {
+             $("ion-input").val("");
+             $("#listaCanciones").empty();
+         };
+
+         function LimpiarArtistas()
+         {
+             $("ion-input").val("");
+             $("#listaArtistas").empty();
+         };
+
+         function LimpiarAlbumes()
+         {
+             $("ion-input").val("");
+             $("#listaAlbumes").empty();
+         };                
+
+
+
+            function getCanciones(){
+                var valor = $("#textoCanciones").val();
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://ws.audioscrobbler.com/2.0/?method=track.search&track=' + valor + '&api_key=7059645aa9d441dce13bf44c82e7a9bc&format=json',
+                    dataType: 'JSON',
+                    success: function (response) {
+                        canciones = [];
+                        for (var i = 0; i < response.results.trackmatches.track.length; i++) {
+                            var cancion = response.results.trackmatches.track[i];
+                            canciones.push({
+                                id: cancion.name + "-" + cancion.artist, nombre: cancion.name, artista: cancion.artist,
+                                escuchantes: cancion.listeners, transmisible: cancion.streamable, link: cancion.url, imagenes: cancion.image
+                            });
+                        }                
+                    },                
+                    error: function (error) {
+                        console.log(error);
+                    }
+                }).then(function(){
+                    listarCanciones();
+                });              
+               };
+
+               function listarCanciones(){
+                   $("#listaCanciones").empty();
+                   for (var i = 0; i < canciones.length; i++){
+                       var cancion = canciones [i];
+                       var elem = "<ion-item  class='itemCancion' data-item='" + cancion.id + "'>" + '<ion-label><div><p><ion-icon name="musical-notes"></ion-icon>' + ' ' +  cancion.nombre + ' - ' + 'Artista: ' + cancion.artista + '</ion-label></ion-item>';
+                        $("#listaCanciones").append(elem);                        
+                   }
+                   getCancionInfo();
+               }
+
+               function listarCancionesFavoritas(){                   
+                   $(".cancionesFavoritas").show();
+                   $("#listaCancionesFavoritas").empty();
+                   for (var i = 0; i <  arrayCancionesLocalStorage .length; i++){
+                       var cancion =  arrayCancionesLocalStorage  [i];
+                       var elem = "<ion-item  class='itemCancion' data-item='" + cancion.id + "'>" + '<ion-label><div><p><ion-icon name="musical-notes"></ion-icon>' + ' ' +  cancion.nombre + ' - ' + 'Artista: ' + cancion.artista + '</ion-label></ion-item>';
+                        $("#listaCancionesFavoritas").append(elem);                        
+                   }                  
+               }
+
+               function listarArtistasFavoritos(){                   
+                   $(".artistasFavoritos").show();
+                   $("#listaArtistasFavoritos").empty();
+                   for (var i = 0; i < arrayArtistasLocalStorage.length; i++){
+                       var artista = arrayArtistasLocalStorage [i];
+                       var elem = "<ion-item  class='itemArtista' data-item='" + artista.id + "'>" + '<ion-label><div><p><ion-icon name="contact"></ion-icon>' + " " + artista.nombre  + '</ion-label></ion-item>';
+                        $("#listaArtistasFavoritos").append(elem);                        
+                   }                   
+               }
+
+               function listarAlbumesFavoritos(){                   
+                   $(".albumesFavoritos").show();
+                   $("#listaAlbumesFavoritos").empty();
+                   for (var i = 0; i < arrayAlbumesLocalStorage.length; i++){
+                       var album = arrayAlbumesLocalStorage [i];
+                       var elem = "<ion-item  class='itemAlbum' data-item='" + album.id + "'>" + '<ion-label><img src="' + album.imagenes[0]['#text'] + '"/>' + " " + album.nombre + ' - ' + 'Artista: ' + album.artista + '</ion-label></ion-item>';
+                        $("#listaAlbumesFavoritos").append(elem);                        
+                   }                  
+               }
+
+               
+            
+
+               function getArtistas(){
+                var valor = $("#textoArtistas").val();
+                $.ajax({
+                    type: 'GET',
+                    url: "http://ws.audioscrobbler.com/2.0/?method=artist.search&artist="+valor+"&api_key=7059645aa9d441dce13bf44c82e7a9bc&format=json",
+                    dataType: 'JSON',
+                    success: function (response) {
+                        artistas = [];
+                        for (var i = 0; i < response.results.artistmatches.artist.length; i++) {
+                            var artista = response.results.artistmatches.artist[i];
+                            artistas.push({
+                                id: artista.name, nombre: artista.name, 
+                                escuchantes: artista.listeners, transmisible: artista.streamable, link: artista.url, imagenes: artista.image
+                            });
+                        }                
+                    },                
+                    error: function (error) {
+                        console.log(error);
+                    }
+                }).then(function(){
+                    listarArtistas();
+                });              
+               };
+
+               function listarArtistas(){
+                   $("#listaArtistas").empty();
+                   for (var i = 0; i < artistas.length; i++){
+                       var artista = artistas [i];
+                       var elem = "<ion-item  class='itemArtista' data-item='" + artista.id + "'>" + '<ion-label><div><p><ion-icon name="contact"></ion-icon>' + " " + artista.nombre  + '</ion-label></ion-item>';
+                        $("#listaArtistas").append(elem);                        
+                   }
+                   getArtistaInfo();
+               }
+
+
+            function getAlbumes(){
+                var valor = $("#textoAlbumes").val();
+                $.ajax({
+                    type: 'GET',
+                    url: "http://ws.audioscrobbler.com/2.0/?method=album.search&album=" +valor+ "&api_key=7059645aa9d441dce13bf44c82e7a9bc&format=json",
+                    dataType: 'JSON',
+                    success: function (response) {
+                        albumes = [];
+                        for (var i = 0; i < response.results.albummatches.album.length; i++) {
+                            var album = response.results.albummatches.album[i];
+                            albumes.push({
+                                id: album.name + "-" + album.artist, nombre: album.name, artista: album.artist,
+                                escuchantes: album.listeners, transmisible: album.streamable, link: album.url, imagenes: album.image
+                            });
+                        }                
+                    },                
+                    error: function (error) {
+                        console.log(error);
+                    }
+                }).then(function(){
+                    listarAlbumes();
+                });              
+               };   
+               
+               function listarAlbumes(){
+                   $("#listaAlbumes").empty();
+                   for (var i = 0; i < albumes.length; i++){
+                       var album = albumes [i];
+                       var elem = "<ion-item  class='itemAlbum' data-item='" + album.id + "'>" + '<ion-label><img src="' + album.imagenes[0]['#text'] + '"/>' + " " + album.nombre + ' - ' + 'Artista: ' + album.artista + '</ion-label></ion-item>';
+                        $("#listaAlbumes").append(elem);                        
+                   }
+                   getAlbumInfo();
+               }
+
+            
+
+            function getTopCanciones(){
+            $.ajax({
+                    type: "GET",
+                    url: "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=7059645aa9d441dce13bf44c82e7a9bc&format=json",
+                    dataType: "JSON",                   
+                    success: function(response){
+                        topCanciones = [];
+                        for (var i = 0; i < response.tracks.track.length; i++) {
+                            var topCancion = response.tracks.track[i];
+                            topCanciones.push({
+                                id: topCancion.name + "-" + topCancion.artist.name, nombre: topCancion.name, artista: topCancion.artist.name,
+                                escuchantes: topCancion.listeners, transmisible: topCancion.streamable, link: topCancion.url, imagenes: topCancion.image
+                            });
+                        }   
+                    },                
+                    error: function (error) {
+                        console.log(error);
+                    }
+                }).then(function(){
+                    listarTopCanciones();
+                });              
+               };     
+               
+               function listarTopCanciones(){
+                   $("#listaTopCanciones").empty();
+                   for (var i = 0; i < topCanciones.length; i++){
+                       var topCancion = topCanciones [i];
+                       var elem = "<ion-item  class='itemTopCancion' data-item='" + topCancion.id + "'>" + '<ion-label><div><p><ion-icon name="musical-notes"></ion-icon>' + " " + topCancion.nombre + ' - ' + 'Artista: ' + topCancion.artista + '</ion-label></ion-item>';
+                        $("#listaTopCanciones").append(elem);                        
+                   }
+                   getTopCancionInfo();
+               }
+
+
+
+
+
+               function mostrarDetalleCancion(cancion) {
+                    $('.listaCancion').toggle();
+                    $('.detalleCancion').toggle();
+
+                    $('.detalleCancion img').prop('src', cancion.imagenes[2]["#text"]);                    
+                    $('.detalleCancion ion-card-title').html("Nombre: " + cancion.nombre);
+                    $('.detalleCancion ion-card-subtitle').html("Artista: " + cancion.artista); 
+                    $('.detalleCancion ion-card-content').text("Escuchantes: " + cancion.escuchantes + " - " + "Link: " + cancion.link);                  
+                                      
+                   
+            };  
+
+            function mostrarDetalleTopCancion(topCancion) {
+                    $('.listaTopCancion').hide();
+                    $('.detalleTopCancion').show();
+                    $('.cancionesFavoritas').hide();
+                    $('.artistasFavoritos').hide();
+                    $('.albumesFavoritos').hide();
+
+                    $('.detalleTopCancion img').prop('src', topCancion.imagenes[2]["#text"]);                    
+                    $('.detalleTopCancion ion-card-title').html("Nombre: " + topCancion.nombre);
+                    $('.detalleTopCancion ion-card-subtitle').html("Artista: " + topCancion.artista); 
+                    $('.detalleTopCancion ion-card-content').text("Escuchantes: " + topCancion.escuchantes + " - " + "Link: " + topCancion.link);                  
+                                      
+                   
+            }; 
+
+                 function mostrarDetalleArtista(artista) {
+                    $('.listaArtista').toggle();
+                    $('.detalleArtista').toggle();
+
+                    $('.detalleArtista img').prop('src', artista.imagenes[2]["#text"]);                    
+                    $('.detalleArtista ion-card-title').html("Nombre: " + artista.nombre);                   
+                    $('.detalleArtista ion-card-content').text("Escuchantes: " + artista.escuchantes + " - " + "Link: " + artista.link);                               
+            };     
+
+            function mostrarTopTracksArtista(){
+                    $('.detalleArtista').hide();
+                    $('.listaTopTracksArtista').show();
+            }
+
+            function mostrarDetalleAlbum(album) {
+                    $('.listaAlbum').toggle();
+                    $('.detalleAlbum').toggle();
+
+                  
+                    $('.detalleAlbum ion-card-title').html("Nombre: " + album.nombre);
+                    $('.detalleAlbum ion-card-subtitle').html("Artista: " + album.artista);
+                    $('.detalleAlbum img').prop('src', album.imagenes[2]["#text"]); 
+            };       
+
+         
+
+
+            function getCancionInfo(){
+                $(".itemCancion").click(function (event){
+                    var cancion = buscarCancion($(this).data('item'));   
+                    AgregarCancion(cancion);                              
+                    if(!cancion){
+                        var nombreCancion = ($(this).data('item')).split("-")[0];
+                        var artista = ($(this).data('item')).split("-")[1];
+                        $.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=7059645aa9d441dce13bf44c82e7a9bc&artist="+artista+"&track="+nombreCancion+"&format=json"),
+                        function (response){
+                            var cancionAPI = response.track;
+                            cancion = {
+                                id: cancionAPI.name + "-" + cancionAPI.artist.name, nombre: cancionAPI.name, artista: cancionAPI.artist.name,
+                                imagenes: cancionAPI.album.image
+                            }                     
+                            mostrarDetalleCancion(cancion);
+                        }
+                    }
+                    else{
+                        mostrarDetalleCancion(cancion);
+                    }
+                });
+            };        
+            
+            function getTopCancionInfo(){
+                $(".itemTopCancion").click(function (event){
+                    var topCancion = buscarTopCancion($(this).data('item'));
+                    AgregarTopCancion(topCancion);
+                    if(!topCancion){
+                        var nombreTopCancion = ($(this).data('item')).split("-")[0];
+                        var artista = ($(this).data('item')).split("-")[1];
+                        $.get("http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=7059645aa9d441dce13bf44c82e7a9bc&artist="+artista+"&track="+nombreTopCancion+"&format=json"),
+                        function (response){
+                            var topcancionAPI = response.track;
+                            topcancion = {
+                                id: topcancionAPI.name + "-" + topcancionAPI.artist.name, nombre: topcancionAPI.name, artista: topcancionAPI.artist.name,
+                                imagenes: topcancionAPI.album.image
+                            }
+                            mostrarDetalleTopCancion(topCancion);
+                        }
+                    }
+                    else{
+                        mostrarDetalleTopCancion(topCancion);
+                    }
+                });
+            };        
+                  
+              
+
+
+            function getArtistaInfo(){
+                $(".itemArtista").click(function (event){
+                    var artista = buscarArtista($(this).data('item'));
+                    AgregarArtista(artista);
+                    if(!artista){                        
+                        var artista = ($(this).data('item')).split("-")[1];
+                        $.get("http://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=7059645aa9d441dce13bf44c82e7a9bc&artist="+artista+"&format=json"),
+                        function (response){
+                            var artistaAPI = response.artist;
+                            artista = {
+                                id: artistaAPI.name, nombre: artistaAPI.name, imagenes: artistaAPI.image
+                            }                                                              
+                        mostrarDetalleArtista(artista);                           
+                        }
+                    }
+                    else{
+                        mostrarDetalleArtista(artista);
+                    }
+                });
+                $("#botonTopCancionesArtista").click(function (artista){                         
+                        $.get("http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist="+artista+"&api_key=7059645aa9d441dce13bf44c82e7a9bc&format=json"),
+                        function (response){
+                        artista.topCanciones = [];
+                        for(var i = 0; i<response.toptracks.track.length; i++){
+                        var cancion = response.toptracks.track[i];
+                        artista.topCanciones.push({
+                            id: cancion.name + "-" + cancion.artist.name, nombre: cancion.name, artista: artist.name,
+                            escuchantes: cancion.listeners, transmisible: cancion.streamable, link: cancion.url, imagenes: cancion.image
+                        });
+                        $("#listaTopTracksArtista").empty();
+                        for (var i = 0; i < artista.topCanciones.length; i++){
+                            var topCancion = artista.topCanciones [i];
+                            var elem = "<ion-item  class='itemTopCancion' data-item='" + topCancion.id + "'>" + '<ion-label><div><p><ion-icon name="musical-notes"></ion-icon>' + " " + topCancion.nombre + ' - ' + 'Artista: ' + topCancion.artista + '</ion-label></ion-item>';
+                            $("#listaTopTracksArtista").append(elem);                        
+                        }
+                        mostrarTopTracksArtista();
+                   
+                        }
+                        };
+                });               
+            };     
+
+           
+                              
+                           
+
+
+              function getAlbumInfo(){
+                $(".itemAlbum").click(function (event){
+                    var album = buscarAlbum($(this).data('item'));
+                    AgregarAlbum(album);
+                    if(!album){
+                        var nombreAlbum = ($(this).data('item')).split("-")[0];
+                        var artista = ($(this).data('item')).split("-")[1];
+                        $.get("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=e84b908e78ccfa6884cca2f167d8ce2c&artist="+artista+"&album="+nombreAlbum+"&format=json"),
+                        function (response){
+                            var albumAPI = response.album;
+                            album = {
+                                id: albumAPI.name + "-" + albumAPI.artist.name, nombre: albumAPI.name, artista: albumAPI.artist.name,
+                                imagenes: albumAPI.album.image
+                            }
+                            mostrarDetalleAlbum(album);
+                        }
+                    }
+                    else{
+                        mostrarDetalleAlbum(album);
+                    }
+                });
+            };              
+
+         
+
+           
+
+            $('#cerrarCancion').click(function(event){
+                $('.listaCancion').show();
+                $('.detalleCancion').hide();   
+                $('.cancionesFavoritas').show();
+                $('.artistasFavoritos').show();
+                $('.albumesFavoritos').show();            
+            });
+
+            $('#cerrarTopCancion').click(function(event){
+                $('.listaTopCancion').show();
+                $('.detalleTopCancion').hide();   
+                $('.cancionesFavoritas').show();
+                $('.artistasFavoritos').show();
+                $('.albumesFavoritos').show();               
+            });
+
+            $('#cerrarArtista').click(function(event){
+                $('.listaArtista').show();
+                $('.detalleArtista').hide();   
+                $('.cancionesFavoritas').show();
+                $('.artistasFavoritos').show();
+                $('.albumesFavoritos').show();               
+            });
+
+            $('#cerrarAlbum').click(function(event){
+                $('.listaAlbum').show();
+                $('.detalleAlbum').hide();   
+                $('.cancionesFavoritas').show();
+                $('.artistasFavoritos').show();
+                $('.albumesFavoritos').show();              
+            });
+
+            function buscarCancion(id){
+                for(var i=0; i<=canciones.length; i++)
+                {
+                    if(canciones[i].id === id)
+                    {
+                        return canciones[i];
+                    }                    
+                }
+                return null;
+            };
+
+            
+            function buscarArtista(id){
+                for(var i=0; i<=artistas.length; i++)
+                {
+                    if(artistas[i].id === id)
+                    {
+                        return artistas[i];
+                    }                    
+                }
+                return null;
+            };
+
+            function buscarTopCancion(id){
+                for(var i=0; i<=topCanciones.length; i++)
+                {
+                    if(topCanciones[i].id === id)
+                    {
+                        return topCanciones[i];
+                    }                    
+                }
+                return null;
+            };
+
+            function buscarAlbum(id){
+                for(var i=0; i<=albumes.length; i++)
+                {
+                    if(albumes[i].id === id)
+                    {
+                        return albumes[i];
+                    }                    
+                }
+                return null;
+            };
+            
+
+           
+
+
+         
+       
+         });     
+     </script>
+     
+</body>
+</html>

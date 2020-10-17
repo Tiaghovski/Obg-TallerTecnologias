@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+ion-title{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;    
+    color:royalblue;     
+    text-align: center;       
+}
+
+h4{
+    font-family: 'Righteous', cursive;
+    font-size: 25px;    
+    color:royalblue;
+}
+
+ion-item:hover {    
+    color: royalblue;
+}
+
+.detalleCancion{
+    display: none;
+}
+
+.detalleArtista{
+    display: none;
+}
+
+.detalleAlbum{
+    display: none;
+}
+
+.detalleTopCancion{
+    display: none;
+}
+
+#cerrarCancion {
+    float: right;
+    top: 20px;
+}
+
+#cerrarArtista {
+    float: right;
+    top: 20px;
+}
+
+#cerrarAlbum {
+    float: right;
+    top: 20px;
+}
+
+#cerrarTopCancion {
+    float: right;
+    top: 20px;
+}
+
+#logo{
+    height: 35px;
+    width: 60px;
+}
+
+#botonTopCancionesArtista{
+    float: left;
+    top: 20 px;
+}
+
+
